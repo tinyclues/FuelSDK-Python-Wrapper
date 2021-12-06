@@ -1,0 +1,30 @@
+version: 2.1
+
+orbs:
+  python: tinyclues/python@3.5.8
+
+executors:
+  python:
+    docker:
+      - image: circleci/python:3.7
+
+jobs:
+  build_deploy:
+    executor: python
+    steps:
+      - checkout
+      - run:
+          name: Run project package
+          command: |
+            python setup.py bdist_wheel
+      - run:
+          name: Upload wheel package
+          command: |
+            pip install twine
+            twine upload dist/*
+workflows:
+  build:
+    jobs:
+      - build_deploy:
+          name: build_and_deploy
+          context: artifactory
