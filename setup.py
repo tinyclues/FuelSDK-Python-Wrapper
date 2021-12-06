@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
     readme = f.read()
 
 setup(
-    version='1.3.4',
+    version='1.3.5',
     name='FuelSDKWrapper',
     description='Simplify and enhance the FuelSDK for Salesforce Marketing Cloud (ExactTarget)',
     long_description=readme,
@@ -16,10 +16,10 @@ setup(
     url='https://github.com/seb-angel/FuelSDK-Python-Wrapper',
     license='MIT',
     install_requires=[
-        'Salesforce-FuelSDK>=1.3.0',
+        'Salesforce-FuelSDK>=1.3.1',
         'PyJWT>=0.1.9',
         'requests>=2.18.4',
-        'suds-jurko>=0.6'
+        'suds-community>=0.7'
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
